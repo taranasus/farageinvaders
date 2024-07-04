@@ -8,7 +8,7 @@ public class PlayerControl : MonoBehaviour
     public float speed = 5f;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Get the mouse position in screen space
         Vector3 mouseScreenPosition = Input.mousePosition;
@@ -29,7 +29,7 @@ public class PlayerControl : MonoBehaviour
             Vector3 direction = (mouseWorldPosition - transform.position).normalized;
 
             // Move the player towards the mouse position at a constant speed
-            transform.position += direction * speed * Time.deltaTime;
+            transform.position += direction * speed * Time.fixedDeltaTime;
         }
     }
 }

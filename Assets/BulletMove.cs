@@ -8,9 +8,9 @@ public class BulletMove : MonoBehaviour
     public float speed = 10f;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Move the bullet forward along its Y axis
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
+        transform.Translate(Vector3.up * speed * Time.fixedDeltaTime);
     }
 }
